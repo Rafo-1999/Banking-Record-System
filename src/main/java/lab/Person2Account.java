@@ -1,12 +1,12 @@
 package lab;
 
-public class Person {
-    public String name;
-    public String surname;
-    public int customerID;
-    public int accountNumber;
+public class Person2Account {
+  public String name;
+  public String surname;
+  public int customerID;
+  public int accountNumber;
 
-  public Person(String name, String surname, int customerID, int accountNumber) {
+  public Person2Account(String name, String surname, int customerID, int accountNumber) {
     this.name = name;
     this.surname = surname;
     this.customerID = customerID;
