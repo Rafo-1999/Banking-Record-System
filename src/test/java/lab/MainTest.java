@@ -2,12 +2,13 @@ package lab;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class MainTest {
+public class MainTest {
 
   @Test
-  void testMathod(){
+    void createTest(){
 
   }
 }
