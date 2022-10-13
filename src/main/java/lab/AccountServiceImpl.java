@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 import lab.db.DbConnection;
 
-public class AccountServiceImpl implements AccountService, AutoCloseable {
+public class AccountServiceImpl implements AccountService {
   private final Connection connection;
 
   public AccountServiceImpl() {
@@ -125,11 +125,20 @@ public class AccountServiceImpl implements AccountService, AutoCloseable {
   }
 
   @Override
-  public void close() throws SQLException {
+  public void close(int id) throws SQLException {
     if (connection == null) {
       return;
     }
+    Statement statement= connection.createStatement();
+    String query="DELETE FROM person WHERE id = ?";
+    try(Connection connection1=this.connection;
+        PreparedStatement preparedStatement=connection.prepareStatement(query) ){
+            preparedStatement.setInt(1,id);
 
-    connection.close();
+      preparedStatement.executeUpdate();
+    }catch (SQLException e){
+      System.out.println(e.getMessage());
+    }
+
   }
 }

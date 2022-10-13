@@ -1,5 +1,6 @@
 package lab;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -14,5 +15,7 @@ public interface AccountService {
 
   void transferMoney(int from,int to, double money) throws SQLException;
 
-  void close() throws SQLException;
+
+  void close(int id) throws SQLException;
+
 }

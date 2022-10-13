@@ -12,7 +12,7 @@ public class Main {
   public static void main(String[] args) throws SQLException {
 
     Scanner sc = new Scanner(System.in);
-
+    Scanner sc2 = new Scanner(System.in);
     while (true) {
       AccountService accountService = new AccountServiceImpl();
 
@@ -23,29 +23,34 @@ public class Main {
       System.out.println("N3 -> Transfer Money");
       System.out.println("N4 -> Delete Account");
       System.out.println("N5 -> Exit the Program");
-      System.out.print("     Input Number->");
+      System.out.print("     Input Number from 1 to 5->");
       Integer input = 0;
 
-      String inp = sc.nextLine();
+      String inp = sc2.nextLine();
       try {
         input = Integer.valueOf(inp);
       } catch (Exception e) {
         System.out.println("Input valid data!");
-    continue;
-
+        continue;
       }
 
       switch (input) {
 
         case 1:
-
           System.out.println(
-              "Create person Account,input <name>,<surname> and <balance> ");
+              "Create person Account,input <name>,<surname> and <money> ");
 
-          accountService.createAccount(sc.next(), sc.next(), sc.nextDouble());
+          try {
+            if (sc.hasNext());
+            accountService.createAccount(sc.next(), sc.next(), sc.nextDouble());
+
+
           createUserTable();
           System.out.println("Has also been created bank account ");
           createBankAccountTable();
+          }catch (Exception e){
+            System.out.println("Input valid data");
+          }
 
           break;
 
@@ -56,22 +61,37 @@ public class Main {
           break;
         case 3:
           System.out.println("Transfer money from one account to another");
-          System.out.println("Input first and second account and money");
+          System.out.println("Input first and second accountID and money");
+          if (sc.hasNextInt());
 
-          accountService.transferMoney(sc.nextInt(), sc.nextInt(), sc.nextInt());
+          try{
+            accountService.transferMoney(sc.nextInt(), sc.nextInt(), sc.nextInt());
+          }catch (Exception e){
+            System.out.println("Input valid data");
+
+          }
+
           break;
         case 4:
 
           System.out.println("Write  id of the program,do you want to delete");
-          sc.nextInt();
-          accountService.close();
-          System.out.println("Account deleted!");
+          if (sc.hasNextInt());
+
+          try {
+            int deleteid = sc.nextInt();
+
+            accountService.close(deleteid);
+            System.out.println("Account deleted!");
+          }catch (Exception e){
+            System.out.println("Input valid data");
+
+          }
           break;
 
         default:
           if (input != 5) {
             System.out.println("Invalid entry!");
-            break;
+
           }
 
       }
