@@ -1,53 +1,19 @@
-                                                               Banking Record System
-
-        Գրել եմ ծրագիր,որը տրամադրում  է կոնսոլային ինտերֆեյս  բանկի աշխատակցի համար,հաշիվներ ավելացնելու և կառավարելու համար։
-        Ծրագիրը գրել եմ java ծրագրավորման լեզվի միջոցով։
-        Ծրագիրը գրել եմ Intellij IDEA-ով, գրելուց օգտագործել եմ հետևյալ տեխնոլոգիաները՝ 
-        Java Core,
-        Java OOP, 
-        JDBC, 
-        PostgresSQL database, 
-        SQL, 
-        Maven, 
-        Docker,
-        Git,Github
-        Ubuntu terminal 
-
-                                                                     Աշխատանքը
-
-        Console application է,որը աշխատացնելուց օգտվողից հարցում է կատարում թե ,որ գործառույթից է ցանկանում օգտվել,ցույց է տալիս
-        ընտրելու տարբերակները և տալիս ընտրելու հնարավորություն։
-        5 տարբերակ է ներառված
-        N1 -> Create Account
-        N2 -> See all accounts
-        N3 -> Transfer Money
-        N4 -> Delete Account
-        N5 -> Exit the Program
-        ու նաև Input Number->  դաշտ,որտեղ համապատասխան թիվը գրելով,,կոնկրետ հրամանն է աշխատում։Եթե օգտվողի կողմից թիվ չի գրվում 
-        այլ տառ կամ ուրիշ սիմվոլ ապա տպվում է էկրանին  «"Input valid data!"»
-        N1 -> Create Account ընտրելով  հնարավորություն է տրվում մուտքագրելու հաճախորդի անունը,ազգանունը և հաշվեհամարը։Տվյալները 
-        մուտքագրելուց հետո ցույց է տալիս,որ ստեղծվել է user-ի account-ը և նաև թե,որերորդ accountn էր դա։
-        N2 -> See all accounts  ընտրելով ցույց է տալիս բոլոր ներմուծված account-ների անունները։
-        N3 -> Transfer Money  հնարավորություն է տալիս, մի account-ի հաշվից մյուսը գումար փոխանցել։Հարցում է կատարում ,որ օգտվողը
-        նշի accountID-ները թե,որ account ից դեպի որն է փոխանցելու ու նաև գումարի չափը։
-        N4 -> Delete Account  ընտրելով օգտվողից հարցնում է  accountID-ն ,որը որ  ցանկանում է ջնջել և ջնջում է account-ը։
-        N5 -> Exit the Program  ընտրելով էլ ուղակի ավարտում է ծրագրի աշխատանքը և դուրս գալիս։
-
-                                                                     Կառուցվածքը
-        Ծրագիրը ստեղծելուց առաջին դեպքում ստեղծել եմ mysql տվյալների բազա (տերմինալով),ու նաև mysql ի workbench,որի 
-        վրա բազա ստեղծելուց  , url-ն տալուց և դրիվերը նստացնելուց հետո,mysql java connector ֆայլն էր ուզում իրա դիրեկտորիայում 
-        install անել,,առաջին փորձից db ին նորմալ կպնում էր,սակայն համակարգիչը restart անելուց հետո mysql ի սերվերը run չէր լինում 
-        քանի որ դրիվեր-ը կորում էր ու ամեն անգամ նորից install ուզում։
-        Երկրորդ դեպքում   postgreSQL  DB եմ ստեղծել: Ստեղծել եմ նոր պրոյեկտ իրա build system -maven տալով։  Connect-ը docker-ով 
-        եմ արել,docker-compose.yml ֆայլի մեջ իրա շաբլոնը տալով ,տվյալ դեպքում ստեղծվում է նաև pom.xml ֆայլը,որի մեջ maven ի 
-        dependecie-ն եմ դրել։Այս դեպքում առավելությունը նա է ,որ ամեն restartից հետո connectը ավտոմատ է անում։
-        Ստեղծել եմ DbConnectioն․java class-ը ,որի վրա db ի connection եմ գրել։
-        Ստեղծել եմ AccountServiceImpl կլասը,որի մեջ գրել եմ բոլոր մեթոդները,որը իմպլեմենտում է  AccountService-ից ,որտեղ կլասի
-        իրականացման ֆունկցիոնալ հատվածն է։
-        Ստեղծել եմ User և BankAccaunt ,որոնց մեջ հայտարված են համապատասխան փոփոխականները։
-        DB-ում ստեղծվել են բանկի accountի ,որի մեջ ներմուծված է օգտվողի հաշվեհամարը և balance-ը,ու օգտվողի account-ը ,որի մեջ 
-        ներառված են օգտվողի անունը ազգանունը և հաշվեհամարը։
-        Թեստավորումը իրականացրել եմ Main կլասի միջոցով,,որտեղ ամեն մեթոդ կանչել եմ և տարբեր արժեքներով արժեքավորրել,ու
-        համապատասխան exception ների պայմանները գրել։
-        Ստեղծել եմ Github-ի repozitory և ներառել պրոյեկտը,master branch -ում։ 
-        Coding Style-ը google -ի checkstyle.xml ֆայլի միջոցով եմ արել։
+My program gives an console interface for bank account management by bank staff. It is written in Java programming language, using Intellij IDEA. I`ve used several technologies such as Java Core, OOP, JDBC, PostgreSQL, SQL, Mave, Docker, Git/Github, Ubuntu terminal.
+Working process.
+Program asks the user for choosing operation to perform.
+N1 -> Create Account
+               Asks for client name, surname and bank account. After entering the data prints the number of current account.
+N2 -> See all accounts
+               Prints all registered accounts.
+N3 -> Transfer Money
+               Asks the user to enter IDs of accounts (in form: sender-receiver) and the amount of money.
+N4 -> Delete Account
+               Asks the user to enter AccountID and deletes the account.
+N5 -> Exit the Program
+          In case of user invalid input such as other symbol or number program gives "Invalid input data!"
+Program structure.
+          In the very first approach I have created MySql Database and workbench. After creating database on this workbench, giving URL and installing the driver the mysql java connector file was asking to install in his directory. In the first time it connected normally, but after restarting the PC the MySql server have not run because the driver needed to be installed again. Because of this problems I tried other approach. I created PostgreSql database. Started new project giving his build system -maven. Giving the pattern in docker-compose.yml I connected it with docker. In this case pom.xml file is created having maven dependecie. In this case the advantage is that after every restart of PC the connected is being automatic.
+I created DbConnection.java class,in which I wrote the database connection. I created AccountServiceImpl class, in which I wrote all the methods,which were implemented from AccountService. I created User and BankAccount,in which I declared all the variables. In the database I created Bank account ,in which client`s accountID,balance and account are stored.
+I tested the programm with main class,in which I called all the methods and wrote exceptions respectively.
+I`ve created Github repository and pushed the project on master branch.
+Style is followed from the Google coding style checkstyle.xml file.
