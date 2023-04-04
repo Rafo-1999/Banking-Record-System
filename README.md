@@ -1,3 +1,5 @@
+                                                   Banking-Record-System
+
 My program gives an console interface for bank account management by bank staff. It is written in Java programming language, using Intellij IDEA. I`ve used several technologies such as Java Core, OOP, JDBC, PostgreSQL, SQL, Mave, Docker, Git/Github, Ubuntu terminal.
 
 Working process.
