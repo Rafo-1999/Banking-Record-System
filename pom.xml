@@ -31,4 +31,8 @@
 
   </dependencies>
 
+  <build>
+    <finalName>banking-record-system</finalName>
+  </build>
+
 </project>
