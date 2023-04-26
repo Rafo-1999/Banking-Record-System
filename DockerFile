@@ -1,5 +1,7 @@
 FROM openjdk
 
+COPY . /home/rafo/IdeaProjects/Lab/DockerFile
+
 EXPOSE 8080
 
 ADD target/banking-record-system.jar banking-record-system.jar
