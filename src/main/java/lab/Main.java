@@ -24,6 +24,7 @@ public class Main {
       System.out.println("N4 -> Delete Account");
       System.out.println("N5 -> Exit the Program");
       System.out.print("     Input Number from 1 to 5->");
+      System.out.println("test");
       Integer input = 0;
 
       String inp = sc2.nextLine();

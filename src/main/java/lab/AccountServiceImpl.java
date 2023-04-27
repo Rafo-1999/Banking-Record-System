@@ -69,7 +69,7 @@
     @Override
     public void showAllUsers() throws SQLException {
       var stmt = connection.createStatement();
-      String query = "SELECT * FROM person";
+      String query = "SELECT * FROM student";
       ResultSet rs = stmt.executeQuery(query);
 
       while (rs.next()) {
